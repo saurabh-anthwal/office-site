@@ -1,27 +1,174 @@
+/* global.css */
+/* @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap'); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* .font-syne {
+    font-family: "Syne", system-ui;
+  } */
+
+/* Custom global variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --font-heading: 'Syne', sans-serif; */
+    /* --font-body: 'Syne', sans-serif; */
+    --font-mono: 'Courier New', monospace;
+    --color-primary: #6000FF;
+    --color-secondary: #F59E0B;
+    --color-background: #F3F4F6;
+    --color-border: #D1D5DB;
+    --color-text-light: #9CA3AF;
+    --color-text-dark: #111827;
+    --heading-lg: 2.25rem; /* 36px */
+    --heading-md: 1.875rem; /* 30px */
+    --heading-sm: 1.5rem; /* 24px */
+    --text-base: 1rem; /* 16px */
+    --text-sm: 0.875rem; /* 14px */
+    --text-xs: 0.75rem; /* 12px */
+    --heading-color: #FFFFFF;
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+    --box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    --box-shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
   }
-}
 
+
+/* Body styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    /* font-family: var(--font-body, 'Syne'), sans-serif; */
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Headings */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    /* color: var(--heading-color); */
 }
+
+h1{
+    font-size: 4rem;
+    line-height: 5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h2{ 
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
+p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+a:hover {
+    color: var(--color-primary);
+}
+
+/* button */
+button{
+    /* background: var(--color-primary); */
+    border-radius: 50px;
+    font-style: normal;
+    padding: 13.5px 41px;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/*main Buttons */
+.main-button {
+    background: var(--color-primary);
+    color: var(--heading-color);
+    border-radius: 50px;
+    font-style: normal;
+    padding: 10px 34px;
+    text-align: center;
+    text-transform: none;
+    z-index: 5;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.7px;
+}
+
+button:hover {
+    /* background-color: var(--color-secondary); */
+}
+
+/* Forms */
+input, textarea, select {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color var(--transition-normal);
+}
+input:focus, textarea:focus, select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+input.sm, textarea.sm, select.sm {
+    font-size: var(--text-sm);
+    padding: 8px;
+}
+
+/* Cards */
+.card {
+    padding: 4rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: box-shadow var(--transition-normal);
+    cursor: pointer;
+}
+.card:hover {
+    box-shadow: var(--box-shadow-sm);
+}
+
+/* Container */
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* typo */
+p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    opacity: 0.7;
+}
+
+.yellow-text{
+    color: #F3682D;
+}
+
+@keyframes scaleSize {
+    0%, 100% {
+      transform: scale(1); /* Original size */
+    }
+    50% {
+      transform: scale(1.03); /* Scaled size */
+    }
+  }
+  
