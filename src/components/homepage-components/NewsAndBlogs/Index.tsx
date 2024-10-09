@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import AnimatedText from '@/components/animation/AnimatedTextSteps';
 
 const NewsAndBlogs = () => {
   // Our news and blogs
@@ -76,7 +77,7 @@ const NewsAndBlogs = () => {
         <button className="border-2 border-gray-200 rounded-full px-4 yellow-text text-base lg:text-lg tracking-normal font-[800] bg-transparent py-1 mb-4">
           Our news & Blogs
         </button>
-        <h2 className="mb-6">See our latest news</h2>
+        <AnimatedText text="See our latest news" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5">
         {visibleSlides.map((el) => (

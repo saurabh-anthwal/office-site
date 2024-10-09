@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import Image from 'next/image'
 import { RiRobot2Line } from "react-icons/ri";
 import { IoIosArrowRoundUp } from "react-icons/io";
+import AnimatedText from '@/components/animation/AnimatedTextSteps';
 
 const OurServices = () => {
   const [ourServices,setOurServices] = useState([
@@ -30,11 +31,9 @@ const OurServices = () => {
       <div>
         <div className='text-center'>
           <button className="border-2 border-gray-200 rounded-full px-4 yellow-text text-base lg:text-lg tracking-normal font-[800] bg-transparent py-1 mb-4">OUR SERVICES</button>
-          <h2 className=" mb-8">
-            Save your time to choosing our
-            <br />
-            qualified services
-          </h2>
+          <div className='md:w-3/4 m-auto'>
+          <AnimatedText text=" Save your time to choosing our qualified services" />
+          </div>
         </div>
         <div className='grid md:grid-cols-3 grid-cols-1'>
         {
@@ -43,9 +42,9 @@ const OurServices = () => {
                 key={i} 
                 onMouseEnter={() => handleMouseEnter(i)} // Triggered when mouse hovers over the card
                 onMouseLeave={handleMouseLeave} // Triggered when mouse leaves the card
-                className={`flex flex-col justify-between space-y-4 p-5 hover:bg-white border-[1px] border-white ${(i === 0 || i === 1 || i === 2) && 'border-t-0'} ${(i === 3 || i === 4 || i === 5) && 'border-b-0'} ${(i === 0 || i === 3) && 'border-l-0'} ${(i === 2 || i === 5) && 'border-r-0'}`}
+                className={`flex flex-col justify-between space-y-4 p-5 hover:bg-white border-[0.5px] border-gray-300 ${(i === 0 || i === 1 || i === 2) && 'border-t-0'} ${(i === 3 || i === 4 || i === 5) && 'border-b-0'} ${(i === 0 || i === 3) && 'border-l-0'} ${(i === 2 || i === 5) && 'border-r-0'}`}
               >
-                <div>
+                <div className='space-y-6'>
                   <div
                     className={`h-16 w-16 rounded-full flex justify-center items-center text-white text-3xl transition-all duration-300 ease-in-out
                     ${hoveredIndex === i ? 'absolute hidden' : 'block'}`}

@@ -38,7 +38,7 @@ const HomePage = () => {
         <Testimonials/>
 
       {/* Pricing Plan */}
-      <PricingPlan/>
+      {/* <PricingPlan/> */}
 
       {/* news & Blogs */}
       <NewsAndBlogs/>

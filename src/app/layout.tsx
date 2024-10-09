@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const syne = Syne({
-  weight: '400',
+  weight: ['400','700'],
   subsets: ['latin'],
 })
  

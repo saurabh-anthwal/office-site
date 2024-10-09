@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import Image from 'next/image';
 import { FaAngleLeft,FaAngleRight } from "react-icons/fa6";
+import AnimatedText from '@/components/animation/AnimatedTextSteps';
 
 const OurPortfolio = () => {
     //our portfolio slider
@@ -62,28 +63,28 @@ const OurPortfolio = () => {
     };
     
   return (
-    <div className="max-w-[80%] m-auto py-12">
+    <div className="max-w-[90%] m-auto py-12">
     <div className='text-center my-10'>
     <button className="border-2 border-gray-200 rounded-full px-4 yellow-text text-base lg:text-lg tracking-normal font-[800] bg-transparent py-1 mb-4">Our Portfolio</button>
-    <h2 className="mb-8">Explore Our Products</h2>
+    <AnimatedText text="Explore Our Products" />
     <div className='relative'>
-      <div
-        className={`relative overflow-hidden text-left space-y-5 p-10 shadow-lg bg-[#D2E0EA] rounded-3xl transition-all duration-[1500ms] ease-[cubic-bezier(0.25, 1, 0.5, 1)] ${
-          animating ? 'opacity-0 translate-x-full' : 'opacity-100 translate-x-0'
-        }`}
-        style={{
-          transform: animating ? 'translateX(-100%)' : 'translateX(0)',
-        }}
-      >
+          <div
+            className={`relative overflow-hidden text-left space-y-5 p-10 md:p-20 shadow-lg bg-[#D2E0EA] rounded-3xl transition-transform duration-500 ease-out ${
+              animating ? "opacity-80" : "opacity-100"
+            }`}
+            style={{
+              transform: `translateX(0)`,
+            }}
+          >
 
         <div className='absolute top-[-15rem] right-[-5rem] border-[8rem] border-gray-50 bg-[#D2E0EA] p-40 rounded-full h-1/2 transition-transform duration-500 ease-in-out'
           style={{
             animation: 'scaleSize 2s infinite ease-in-out', // Add scale animation
           }}
         ></div>
-        <h2 className="mb-8" style={{ zIndex: 10, position: 'relative' }}>{slides[currentSlide].title}</h2>
-        <p>{slides[currentSlide].description}</p>
-        <ul className='font-semibold grid grid-cols-2 gap-5 md:w-[60%]'>
+        <h2 className='my-4' style={{ zIndex: 10, position: 'relative' }}>{slides[currentSlide].title}</h2>
+        <p className='my-4'>{slides[currentSlide].description}</p>
+        <ul className='py-4 font-semibold grid grid-cols-2 gap-5 md:w-[60%]'>
           {slides[currentSlide].features.map((feature, index) => (
             <li key={index} className='flex items-center gap-1'>
               <IoIosCheckmarkCircle className="w-7 h-7 text-green-500" />
@@ -107,7 +108,7 @@ const OurPortfolio = () => {
       {/* Previous Button */}
       <button
         className="absolute top-1/2 left-[-30px] transform -translate-y-1/2 text-3xl p-4 bg-[#D2E0EA] border-[1px] border-gray-400 rounded-full shadow-lg hover:bg-gray-100"
-        style={{ width: "60px", height: "60px", display: "flex", justifyContent: "center", alignItems: "center" }}
+        style={{ width: "70px", height: "70px", display: "flex", justifyContent: "center", alignItems: "center" }}
         onClick={handlePrev}
       >
         <FaAngleLeft/>
@@ -116,18 +117,18 @@ const OurPortfolio = () => {
       {/* Next Button */}
       <button
         className="absolute top-1/2 right-[-30px] transform -translate-y-1/2 text-3xl p-4 bg-[#D2E0EA] border-[1px] border-gray-400 rounded-full shadow-lg hover:bg-gray-100"
-        style={{ width: "60px", height: "60px", display: "flex", justifyContent: "center", alignItems: "center" }}
+        style={{ width: "70px", height: "70px", display: "flex", justifyContent: "center", alignItems: "center" }}
         onClick={handleNext}
       >
         <FaAngleRight />
       </button>
 
         {/* Dots for Slide Navigation */}
-        <div className="absolute bottom-[-40px] left-0 right-0 flex justify-center space-x-2">
+        <div className="absolute bottom-[-4rem] left-0 right-0 flex justify-center space-x-2">
             {slides.map((_, index) => (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full ${index === currentSlide ? 'bg-green-500' : 'bg-gray-400'}`}
+                className={`w-4 h-4 rounded-full ${index === currentSlide ? 'bg-[#6000FF]' : 'border-[0.5px] border-black'}`}
                 style={{ cursor: 'pointer' }}
                 onClick={() => handleDotClick(index)}
               />

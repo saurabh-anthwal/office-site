@@ -31,9 +31,9 @@ const Footer = () => {
         </div>
 
         {/* Footer Links */}
-        <div className="pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-xs">
+        <div className="pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-10 gap-8 text-xs">
           {/* Logo & Description */}
-          <div>
+          <div className='md:col-span-3 leading-loose tracking-wide'>
             <div className="flex items-center space-x-3 mb-5">
               <img
                 src="https://dataclaps.com/wp-content/uploads/2020/09/Screenshot-2023-03-18-at-2.36.25-AM.png"
@@ -41,7 +41,7 @@ const Footer = () => {
                 className="w-32 h-10"
               />
             </div>
-            <p className="text-[14px] w-3/4">
+            <p className="text-[16px] w-3/4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
             </p>
             <div className="flex space-x-4 mt-5 text-lg">
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
 
           {/* Company Links */}
-          <div>
+          <div className='md:col-span-2'>
             <h3 className="text-white font-bold mb-6 text-xl">Company</h3>
             <ul className="space-y-6 text-[16px] text-gray-400">
               <li><a href="#" className="hover:text-white">About Us</a></li>
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
 
           {/* Services Links */}
-          <div>
+          <div className='md:col-span-2'>
             <h3 className="text-white font-bold mb-6 text-xl">Service</h3>
             <ul className="space-y-6 text-[16px] text-gray-400">
               <li><a href="#" className="hover:text-white">Data Engineering</a></li>
@@ -85,29 +85,29 @@ const Footer = () => {
           </div>
 
           {/* Recent Blogs */}
-          <div>
+          <div className='md:col-span-3 md:pr-6'>
             <h3 className="text-white font-bold mb-6 text-xl">Recent Blogs</h3>
             <ul className="space-y-6">
               <li className="flex space-x-3">
                 <img
                   src="https://html.rrdevs.net/zimis/assets/imgs/footer/footer__widget-post-1.jpg"
                   alt="Blog 1"
-                  className="w-16 h-16 rounded-lg object-cover"
+                  className="w-20 h-20 rounded-lg object-cover"
                 />
                 <div>
-                  <p className="text-xs text-gray-400">March 24, 2024</p>
-                  <p className="hover:text-white">Demystifying AI: Understanding the Basics</p>
+                  <p className="text-xs text-gray-400 m-0">March 24, 2024</p>
+                  <h6 className="text-white text-lg">Demystifying AI: Understanding the Basics</h6>
                 </div>
               </li>
               <li className="flex space-x-3">
                 <img
                   src="https://html.rrdevs.net/zimis/assets/imgs/footer/footer__widget-post-2.jpg"
                   alt="Blog 2"
-                  className="w-16 h-16 rounded-lg object-cover"
+                  className="w-20 h-20 rounded-lg object-cover"
                 />
                 <div>
-                  <p className="text-xs text-gray-400">March 24, 2024</p>
-                  <p className="hover:text-white">AI and Creativity: Exploring the Intersection</p>
+                  <p className="text-xs text-gray-400 m-0">March 24, 2024</p>
+                  <h6 className="text-white text-lg">AI and Creativity: Exploring the Intersection</h6>
                 </div>
               </li>
             </ul>

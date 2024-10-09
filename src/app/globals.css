@@ -60,6 +60,9 @@ h2{
     font-size: 3rem;
     line-height: 4rem;
     margin-bottom: 20px;
+    font-weight: 700;
+    color: #000 !important;
+    letter-spacing: 0.8px;
 }
 
 /* Paragraphs */

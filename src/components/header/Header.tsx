@@ -26,11 +26,11 @@ const Header = () => {
 
   return (
     <header className={`sticky top-0 z-[100] ${isMenuOpen ? "bg-[#010915] text-white" : "bg-white text-black"} shadow-md`}>
-      <nav className="flex justify-between items-center p-5 max-w-[100%] m-auto">
+      <nav className="w-full md:w-[85%] mx-auto flex justify-between items-center py-5">
         {/* Logo */}
         <Image
-          width={80}
-          height={80}
+          width={150}
+          height={150}
           src="https://dataclaps.com/wp-content/uploads/2020/09/Screenshot-2023-03-18-at-2.36.25-AM.png"
           alt="Zimis Logo"
           className="logo transition-all duration-300"
@@ -40,7 +40,7 @@ const Header = () => {
         <ul className="hidden md:flex items-center gap-10">
           {menu.map((el) => (
             <li key={el.id}>
-              <Link href={el.url}>{el.title}</Link>
+              <Link className="text-md font-extralight text-gray-700" href={el.url}>{el.title}</Link>
             </li>
           ))}
         </ul>

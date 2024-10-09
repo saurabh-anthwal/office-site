@@ -1,3 +1,4 @@
+import AnimatedText from '@/components/animation/AnimatedTextSteps'
 import React,{useState} from 'react'
 
 const WhyChooseUs = () => {
@@ -9,11 +10,13 @@ const WhyChooseUs = () => {
       {id:"03",heading:"Expertise & Innovation",details:"A web app title is the name or title of a web application that is displayed in the web browser's title bar, tab, or bookmark list."},
      ]
   return (
-    <div>
+    <div className='bg-[#D2E0EA] my-10'>
     <div className="max-w-[80%] m-auto py-12 text-center">
     <div>
     <button className="border-2 border-gray-200 rounded-full px-4 yellow-text text-base lg:text-lg tracking-normal font-[800] bg-transparent py-1 mb-4">WHY CHOOSE US</button>
-    <h2 className="mb-8">Revolutionize your business with <br/>Al technology</h2>
+    <div className='md:w-3/4 m-auto'>
+    <AnimatedText text="Revolutionize your business with Al technology" />
+    </div>
     <div className='grid md:grid-cols-2 justify-between gap-10 md:gap-20 mb-10'>
       {tabData.map((el, index) => (
         <div className='px-4'>

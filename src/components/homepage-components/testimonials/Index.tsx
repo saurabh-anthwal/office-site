@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import AnimatedText from '@/components/animation/AnimatedTextSteps';
 
 const Testimonials = () => {
   const testimonials = [
@@ -45,10 +46,9 @@ const Testimonials = () => {
             </button>
           </div>
           <div className="text-center">
-            <h2 className="mb-8">
-              What our customers say <br/>about us
-            </h2>
-
+            <div className='md:w-3/4 m-auto'>
+            <AnimatedText text="What our customers say about us" />
+            </div>
             {/* Testimonial Card */}
             <div className="p-4 md:px-0">
               <div className="bg-white space-y-10 rounded-3xl shadow-lg p-6 md:p-12 hover:shadow-xl transform transition duration-300 ease-in-out">
